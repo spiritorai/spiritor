@@ -37,7 +37,7 @@ Here is a summary of the [data retention policy of OpenAI](https://platform.open
 
 > Your data is your data.
 >
-> As of March 1, 2023, data sent to the OpenAI API will not be used to train or improve OpenAI models (unless you explicitly opt in). One advantage to opting in is that the models may get better at your use case over time.
+> As of March 1, 2023, data sent to the OpenAI API will not be used to train or improve OpenAI models (unless you explicitely opt in). One advantage to opting in is that the models may get better at your use case over time.
 > 
 > To help identify abuse, API data may be retained for up to 30 days, after which it will be deleted (unless otherwise required by law). For trusted customers with sensitive applications, zero data retention may be available. With zero data retention, request and response bodies are not persisted to any logging mechanism and exist only in memory in order to serve the request.
 
@@ -58,9 +58,13 @@ While the CLI aims to be self-contained into a single binary, we are not quite t
 
 ## Installation
 
-Simply download the latest pre-compiled binary/executable for your operating system. Then add the binary to your system path so that it can be executed from any folder.
+Simply [download the latest release](https://github.com/spiritorai/spiritor/releases) for your operating system, and then add the binary to your system path so that it can be executed from any folder.
 
-** NOTE: The binaries are not currently available for download but are being implemented. In the meantime you can just clone the package and `go install spiritor.go` to install locally. **
+Alternatively if you have go install you can just build the module directly:
+
+```
+go install github.com/spiritorai/spiritor@latest
+```
 
 ## Commands
 
@@ -131,6 +135,12 @@ All commands will support a `--debug` flag which will enable detailed console ou
 
 # Developer Notes
 
-Golang developers may import and utilize the spiritor module directly. If you do so please be sure to use vendoring, because at this point in development the package organization and function signatures are liable to change.
+Developers may simply import the latest module for inclusion in your go project:
+
+```sh
+go get github.com/spiritorai/spiritor
+```
+
+Please note the module version is currently `v0.x.x` which means contracts may be **unstable** and breaking changes may be introduced. Please bind to a specific module version and/or use vendoring in your projects.
 
 Contributors please see: [DEVELOPMENT.md](DEVELOPMENT.md).
