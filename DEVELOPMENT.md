@@ -1,5 +1,7 @@
 # Developer Notes
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/spiritorai/spiritor.svg)](https://pkg.go.dev/github.com/spiritorai/spiritor)
+
 ## Versioning
 
 I do not yet have a good versioning strategy in place, but I do plan to add proper semver module versions, releases and release notes later.

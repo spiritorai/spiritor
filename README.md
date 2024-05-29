@@ -1,6 +1,9 @@
 # Spiritor AI
 
-Spiritor is a privacy centric and open source toolkit for writers and content creators. Think of it as your creative copilot. Rapidly generate content in your own voice and based on your own ideas for:
+[![Go Report Card](https://goreportcard.com/badge/github.com/spiritorai/spiritor)](https://goreportcard.com/report/github.com/spiritorai/spiritor)
+[![Go Reference](https://pkg.go.dev/badge/github.com/spiritorai/spiritor.svg)](https://pkg.go.dev/github.com/spiritorai/spiritor)
+
+Spiritor is a privacy centric and open source toolkit for writers and content creators utilizing speech-to-text transcription and ai. Think of it as your creative copilot. Rapidly generate content in your own voice and based on your own ideas for:
 
 * Essays, books and articles
 * Video scripts
@@ -9,20 +12,22 @@ Spiritor is a privacy centric and open source toolkit for writers and content cr
 
 ## Current Features
 
-* Batch speech-to-text transcription of audio files
+* Batch speech-to-text transcription of audio files:
 	* Currently supported: `mp3`, `aac`, `wav`
 	* Utilizing [OpenAI Whisper API](https://platform.openai.com/docs/guides/speech-to-text)
-	* Batch processing
+	* Large batch processing
 	* Large file (<= 3 hours) support
 	* Optimized downsampling (no file splitting)
 
 ## Roadmap Features
 
+* Multiple speakers identification
 * Super large file (> 3 hours) support (via file splitting)
 * Support additional audio formats
 * Speech-to-text transcription of video files
 * Transcript-based editing of audio/video files
 * AI assisted recomposition of transcripts and writing
+* Text-to-speech content generation
 
 ## Data Retention Policy
 
@@ -49,11 +54,13 @@ Windows support is on the roadmap.
 
 While the CLI aims to be self-contained into a single binary, we are not quite there yet. At this time, the following external dependencies must be installed on your machine separately:
 
-* (ffmpeg)[https://ffmpeg.org/download.html]
+* [ffmpeg](https://ffmpeg.org/download.html)
 
 ## Installation
 
 Simply download the latest pre-compiled binary/executable for your operating system. Then add the binary to your system path so that it can be executed from any folder.
+
+** NOTE: The binaries are not currently available for download but are being implemented. In the meantime you can just clone the package and `go install spiritor.go` to install locally. **
 
 ## Commands
 
@@ -104,7 +111,7 @@ It is safe to re-run these batch commands on a folder where the contents have ch
 spiritor scribe *.* -f
 ```
 
-Full command details can be obtained via `--help`, eg: `spiritor scribe --help`.
+Full command details can be obtained via `spiritor scribe --help`.
 
 #### Large Batches
 
@@ -126,6 +133,4 @@ All commands will support a `--debug` flag which will enable detailed console ou
 
 Golang developers may import and utilize the spiritor module directly. If you do so please be sure to use vendoring, because at this point in development the package organization and function signatures are liable to change.
 
-Golang Package Docs: [pkg.go.dev/github.com/spiritorai/spiritor](https://pkg.go.dev/github.com/spiritorai/spiritor)
-
-Developers and contributors please see: [DEVELOPMENT.md](DEVELOPMENT.md).
+Contributors please see: [DEVELOPMENT.md](DEVELOPMENT.md).
